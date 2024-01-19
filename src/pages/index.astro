@@ -1,16 +1,13 @@
 ---
-
+import Projects from "@/components/Projects.astro";
+import Layout from "@/layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="Porfolio de Sergio Beleña - Desarrollador y Programador Web con 7 años de experiencia"
+  description="Contratme para crear tu aplicación web o móvil. Desarrollador Web Fullstack. Especializado en crear aplicaciones únicas."
+>
+  <main class="px-4">
+    <Projects />
+  </main>
+</Layout>

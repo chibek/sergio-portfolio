@@ -1,0 +1,39 @@
+---
+import ThemeSwitch from "@/components/ThemeSwitch.astro";
+---
+
+<header
+  class="sticky top-0 z-10 mx-auto flex w-full items-center justify-center py-5 xl:w-[1120px]"
+>
+  <div class="relative">
+    <div class="absolute top-0 flex w-full justify-center">
+      <div
+        class="left-0 h-[1px] animate-border-width rounded-full bg-gradient-to-r from-[rgba(17,17,17,0)] via-white to-[rgba(17,17,17,0)] transition-all duration-1000"
+      >
+      </div>
+    </div>
+    <div
+      class="flex h-full items-center justify-center rounded-full border border-slate-600 bg-neutral-200 px-6 py-2 dark:bg-black/50"
+    >
+      <nav class="flex flex-row items-center space-x-2 backdrop-blur-2xl">
+        <a
+          class="px-2 text-sm underline-offset-4 hover:underline sm:px-3 sm:text-base"
+          href="/#experiencia">Experiencia</a
+        >
+        <a
+          class="px-2 text-sm underline-offset-4 hover:underline sm:px-3 sm:text-base"
+          href="/#proyectos">Proyectos</a
+        >
+        <a
+          class="px-2 text-sm underline-offset-4 hover:underline sm:px-3 sm:text-base"
+          href="/#sobre-mi">Sobre mí</a
+        >
+        <a
+          class="px-2 text-sm underline-offset-4 hover:underline sm:px-3 sm:text-base"
+          href="/#contacto">Contacto</a
+        >
+        <ThemeSwitch />
+      </nav>
+    </div>
+  </div>
+</header>
