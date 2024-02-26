@@ -1,0 +1,25 @@
+---
+import { cn } from "../utils/utils";
+
+interface Props {
+  class?: string;
+  bgColorPrimary?: string;
+  bgColorSecondary?: string;
+}
+
+const { class: className, bgColorPrimary, bgColorSecondary } = Astro.props;
+console.log(bgColorPrimary);
+const bgPrimary = bgColorPrimary ? `bg-${bgColorPrimary}` : "bg-[#0B66C2]";
+---
+
+<button
+  class={cn(
+    "group relative m-1 inline-flex cursor-pointer items-center justify-center overflow-hidden rounded border-b-4 border-l-2 border-[#0b4ec2]  px-3.5 py-2 shadow-lg active:border-[#0B66C2] active:shadow-none",
+    bgPrimary,
+  )}
+>
+  <span
+    class="absolute h-0 w-0 rounded-full bg-white opacity-10 transition-all duration-300 ease-out group-hover:h-32 group-hover:w-32"
+  ></span>
+  <span class={cn("relative", className)}><slot /></span>
+</button>

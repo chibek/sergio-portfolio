@@ -6,6 +6,7 @@ export default {
     extend: {
       animation: {
         "border-width": "border-width 3s infinite alternate",
+        "bounce-x": "bounce-x 1s infinite",
       },
       keyframes: {
         "border-width": {
@@ -17,6 +18,10 @@ export default {
             width: "200px",
             opacity: "1",
           },
+        },
+        "bounce-x": {
+          "0%, 100%": { transform: "translate(20%)" },
+          "50%": { transform: "none" },
         },
       },
     },

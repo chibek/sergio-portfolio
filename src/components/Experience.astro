@@ -1,0 +1,106 @@
+---
+import Calendar from "@/components/icons/Calendar.astro";
+import ArrowRigthCircle from "@/components/icons/ArrowRigthCircle.astro";
+
+export const experiencies = [
+  {
+    title: "Relex",
+    role: "Fullstack Developer",
+    description:
+      "Relex es una gran empresa de software (~500 empleados) que ayuda a minoristas y marcas de consumo a unificar sus procesos de planificación. Ofrecen una variedad de productos que facilitan la planificación y optimización. Formé parte del equipo multinacional de Gestión de Turnos en Relex Work",
+    link: "https://www.relexsolutions.com/es/",
+    time: "Enero 2024 - Actualidad",
+    latest: true,
+    className: "md:col-span-1",
+  },
+  {
+    title: "Blueprint Genetics",
+    role: "Fullstack Developer",
+    description:
+      "Colaboré con el cliente en el desarrollo de nuevos productos/tipos de pruebas para su sistema Nucleus. La interfaz de usuario de su sistema era un frontend construido con React, conectado a dos backends: uno construido con PHP y otro con Golang. ",
+    link: "https://blueprintgenetics.com/",
+    time: "Julio 2023 - 2024",
+    latest: false,
+    className: "md:col-span-2",
+  },
+  {
+    title: "Barona Internal",
+    role: "Fullstack Developer",
+    description:
+      "Trabajé como desarrollador full-stack y punto de contacto del equipo en un proyecto greenfield de rápida implementación, desde cero hasta producción, utilizando NodeJs, React y AWS. La funcionalidad consistía en crear APIs REST privadas utilizando Koa.js y TypeScript, para agrupar información sobre servicios de formación provenientes de diversas fuentes. La plataforma permitía una comunicación fluida entre los componentes de front-end y back-end, y fue exhaustivamente probada mediante Vitest.",
+    link: "https://barona.fi/en",
+    time: "Abril 2023 - Junio 2023",
+    latest: false,
+  },
+  {
+    title: "Barona Web",
+    role: "Fullstack Developer",
+    description:
+      "Colaboré con un equipo de desarrolladores para diseñar, desarrollar e implementar la aplicación aplicación web de Barona.fi utilizando los marcos de trabajo de Next.js y Express.",
+    link: "https://barona.fi/en",
+    time: "Agosto 2022 - Febrero 2023",
+    latest: false,
+  },
+  {
+    title: "Sesame",
+    role: "Frontend",
+    description:
+      "Sesame es una empresa emergente que trabaja en aplicaciones de recursos humanos. Creció rápidamente enfrentando nuevos desafíos, y la tecnología principal de la empresa es PHP y Vue.js. Mi función en el proyecto fue liderar el desarrollo del front-end con un pequeño grupo de profesionales senior.",
+    link: "https://www.sesametime.com/",
+    time: "Julio 2021 - Agosto 2022",
+    latest: false,
+  },
+  {
+    title: "Sngular",
+    role: "Fullstack Developer",
+    description:
+      "Belike es una empresa que crea las herramientas de software necesarias para respaldar el proceso de transformación digital. Trabajé como desarrollador full-stack en equipos pequeños que se ocupaban de diversos proyectos, como MSC y AECOC.",
+    link: "https://www.sngular.com/",
+    time: "Julio 2020 - Julio 2021",
+    latest: false,
+  },
+  {
+    title: "PFS",
+    role: "Backend",
+    description:
+      "PFS Consulting es una empresa de consultoría y productos de software enfocada en el nicho de riesgo crediticio bancario. Es una empresa grande con más de 250 empleados y un dominio complejo relacionado con los flujos de trabajo bancarios. Durante mi tiempo en la empresa, aprendí a trabajar para una gran empresa y cómo organizar equipos y flujos de trabajo. Trabajé en varios proyectos en esta empresa, adaptando mis habilidades a diferentes tecnologías y compañeros de trabajo.",
+    link: "https://www.pfsgroup.es/en/",
+    time: "Julio 2018 - Julio 2020",
+    latest: false,
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+  {
+    experiencies.map(({ title, role, description, link, time, latest }) => (
+      <li class="mb-10 ms-6">
+        <span class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900">
+          <Calendar class="h-2.5 w-2.5 text-blue-800 dark:text-blue-300" />
+        </span>
+        <h3 class="mb-1 flex items-center text-lg font-semibold text-gray-900 dark:text-white">
+          {title} {role ? ` - ${role}` : null}
+          {latest ? (
+            <span class="me-2 ms-3 rounded bg-blue-100 px-2.5 py-0.5 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+              Latest
+            </span>
+          ) : null}
+        </h3>
+        <time class="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+          {time}
+        </time>
+        <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+          {description}
+        </p>
+        <a
+          href={link}
+          target="_blank"
+          class="group inline-flex items-center space-x-1 font-medium text-blue-800 hover:underline dark:text-blue-300"
+        >
+          <span>{title} website</span>{" "}
+          <ArrowRigthCircle class="size-4 motion-safe:group-hover:animate-bounce-x" />
+        </a>
+      </li>
+    ))
+  }
+</ol>
